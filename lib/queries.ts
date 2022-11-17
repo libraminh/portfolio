@@ -12,6 +12,9 @@ export const indexQuery = `
   ${postFields}
 }`;
 
+export const projectsQuery = `
+*[_type == "projects"] | order(date desc, _updatedAt desc)`;
+
 export const postQuery = `
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {

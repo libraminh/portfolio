@@ -7,8 +7,11 @@ import BlogPostCard from '../components/BlogPostCard';
 import Subscribe from '../components/Subscribe';
 import VideoCard from '../components/VideoCard';
 import { featuredProjects } from 'data/featured-projects';
+import { getClient } from 'lib/sanity-server';
+import { projectsQuery } from 'lib/queries';
 
-export default function Home() {
+export default function Home({ projects }) {
+  console.log('projects ?>>', projects);
   return (
     <Suspense fallback={null}>
       <Container>
@@ -49,14 +52,15 @@ export default function Home() {
           </h3>
 
           <div className="grid gap-6 mb-16">
-            {featuredProjects?.map((post, pIndex) => (
-              <React.Fragment key={pIndex}>
+            {projects?.map((project) => (
+              <React.Fragment key={project._id}>
                 <BlogPostCard
-                  title={post.title}
+                  title={project.title}
                   slug="portfolio-sgbc-home-planner"
                   gradient="from-[#D8B4FE] to-[#818CF8]"
-                  content={post.desctiption}
-                  pHref={post.pUrl}
+                  content={project.content}
+                  pHref={project.url}
+                  date={project.date}
                 />
               </React.Fragment>
             ))}
@@ -187,4 +191,10 @@ export default function Home() {
       </Container>
     </Suspense>
   );
+}
+
+export async function getStaticProps({ preview = false }) {
+  const projects = await getClient(preview).fetch(projectsQuery);
+
+  return { props: { projects } };
 }
