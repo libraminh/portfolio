@@ -4,6 +4,17 @@ const postFields = `
   date,
   excerpt,
   coverImage,
+  url,
+  content,
+  "slug": slug.current,
+`;
+
+const projectFields = `
+  _id,
+  title,
+  date,
+  url,
+  content,
   "slug": slug.current,
 `;
 
@@ -12,8 +23,23 @@ export const indexQuery = `
   ${postFields}
 }`;
 
+export const experiencesQuery = `
+*[_type == "experiences"] | order(date desc, _updatedAt desc)`;
+
 export const projectsQuery = `
 *[_type == "projects"] | order(date desc, _updatedAt desc)`;
+
+export const projectsSlugsQuery = `
+*[_type == "projects" && defined(slug.current)][].slug.current
+`;
+
+export const projectQuery = `
+{
+  "project": *[_type == "projects" && slug.current == $slug] [0] {
+    content,
+    ${projectFields}
+  }
+}`;
 
 export const postQuery = `
 {

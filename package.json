@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.0.2",
+    "@portabletext/react": "^2.0.0",
     "@prisma/client": "^4.5.0",
     "@sanity/image-url": "^1.0.1",
     "@sanity/webhook": "^2.0.0",

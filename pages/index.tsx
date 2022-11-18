@@ -1,84 +1,51 @@
 import React, { Suspense } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from '../components/Container';
 import BlogPostCard from '../components/BlogPostCard';
 import Subscribe from '../components/Subscribe';
 import VideoCard from '../components/VideoCard';
-import { featuredProjects } from 'data/featured-projects';
 import { getClient } from 'lib/sanity-server';
-import { projectsQuery } from 'lib/queries';
+import { experiencesQuery, projectsQuery } from 'lib/queries';
+import ArrowRight from 'components/ArrowRight';
+import Experience from 'components/Experience';
 
-export default function Home({ projects }) {
-  console.log('projects ?>>', projects);
+export default function Home({ projects, experiences }) {
+  const filterTop3FeaturedProjects = projects.filter((proj) => proj.featured);
+
   return (
     <Suspense fallback={null}>
       <Container>
         <div className="flex flex-col justify-center items-start max-w-3xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
-          <div className="flex flex-col-reverse sm:flex-row items-start">
-            <div className="flex flex-col pr-8">
-              <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
-                Minh Le
-              </h1>
-
-              <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-                Frontend Developer at{' '}
-                <span className="font-semibold">Construct Digital</span>
-              </h2>
-
-              <p className="text-gray-600 dark:text-gray-400 mb-16">
-                Hello, I am a frontend developer based in Sai Gon and happy to
-                travel all over the world to capture your big day in candid and
-                authentic photos. I will create a lasting memory of the people.
-              </p>
-            </div>
-
-            <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
-              <Image
-                alt="Minh Le"
-                height={176}
-                width={176}
-                src="/avatar.jpg"
-                sizes="30vw"
-                priority
-                className="rounded-full filter grayscale"
-              />
-            </div>
-          </div>
+          <Experience experiences={experiences} />
 
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
             Featured Projects
           </h3>
 
-          <div className="grid gap-6 mb-16">
-            {projects?.map((project) => (
+          <div className="grid gap-6">
+            {filterTop3FeaturedProjects?.map((project: any) => (
               <React.Fragment key={project._id}>
                 <BlogPostCard
                   title={project.title}
-                  slug="portfolio-sgbc-home-planner"
+                  slug={project.slug.current}
                   gradient="from-[#D8B4FE] to-[#818CF8]"
                   content={project.content}
-                  pHref={project.url}
+                  url={project.url}
                   date={project.date}
                 />
               </React.Fragment>
             ))}
+          </div>
 
-            {/* 
-            <BlogPostCard
-              title="Rust Is The Future of JavaScript Infrastructure"
-              slug="rust"
-              gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
-              content="lorem"
-            />
-
-            <BlogPostCard
-              title="Past, Present, and Future of React State Management"
-              slug="react-state-management"
-              gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
-              content="lorem"
-            /> */}
+          <div className="mb-16">
+            <Link
+              href="/portfolio"
+              className="flex items-center mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all"
+            >
+              Read all projects
+              <ArrowRight />
+            </Link>
           </div>
 
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
@@ -195,6 +162,7 @@ export default function Home({ projects }) {
 
 export async function getStaticProps({ preview = false }) {
   const projects = await getClient(preview).fetch(projectsQuery);
+  const experiences = await getClient(preview).fetch(experiencesQuery);
 
-  return { props: { projects } };
+  return { props: { projects, experiences } };
 }
