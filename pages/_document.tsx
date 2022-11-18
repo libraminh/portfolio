@@ -45,7 +45,8 @@ export default function Document(props) {
         />
       </Head>
 
-      <body className="bg-white dark:bg-[#111319] text-white dark:text-black">
+      <body className="bg-white dark:bg-black text-white dark:text-black">
+        <div className="max-w-7xl  fixed bg-white dark:ring-1 dark:bg-zinc-900 dark:ring-zinc-300/20 left-1/2 w-full h-full -translate-x-1/2 -z-10 px-10 inset-0"></div>
         <Main />
         <NextScript />
       </body>

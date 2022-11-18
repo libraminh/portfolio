@@ -5,7 +5,7 @@ import Container from 'components/Container';
 export default function NotFound() {
   return (
     <Container title="404 – Minh Le">
-      <div className="flex flex-col justify-center items-start max-w-3xl mx-auto mb-16">
+      <div className="flex flex-col justify-center items-start max-2-xl md:max-w-5xl  mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           451 – Unavailable For Legal Reasons
         </h1>

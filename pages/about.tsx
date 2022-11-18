@@ -8,7 +8,7 @@ import avatarBW from 'public/avatar-bw.jpg';
 export default function About() {
   return (
     <Container title="About – Minh Le">
-      <div className="flex flex-col justify-center items-start max-w-3xl mx-auto mb-16 w-full">
+      <div className="flex flex-col justify-center items-start max-2-xl md:max-w-5xl  mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           About Me
         </h1>

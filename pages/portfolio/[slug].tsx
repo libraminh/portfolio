@@ -46,9 +46,22 @@ const components = {
 const PortfolioPage = ({ project }) => {
   return (
     <Container title={`Portfolio | ${project.title}`}>
-      <div className="max-w-3xl w-full mx-auto pb-16 text-white space-y-5">
+      <div className="max-2-xl md:max-w-5xl  w-full mx-auto pb-16 text-white space-y-10">
+        <div className="max-w-2xl mb-20">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl md:!leading-[56px]">
+            Things I’ve made trying to put my dent in the universe.
+          </h1>
+
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            I’ve worked on tons of little projects over the years but these are
+            the ones that I’m most proud of. Many of them are open-source, so if
+            you see something that piques your interest, check out the code and
+            contribute if you have ideas for how it can be improved.
+          </p>
+        </div>
+
         <div className="flex justify-between space-x-5">
-          <h1 className="text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white flex-1">
+          <h1 className="text-2xl font-bold tracking-tight text-black md:text-3xl dark:text-white flex-1">
             {project.title}
           </h1>
 
@@ -63,11 +76,20 @@ const PortfolioPage = ({ project }) => {
           </div>
         </div>
 
-        <p>Date: {project.date}</p>
+        <div className="flex items-center space-x-5">
+          <div className="bg-white flex items-center justify-center w-10 h-10 rounded-full">
+            <Image
+              alt="Minh Le"
+              height={22}
+              width={22}
+              src="/calender-icon.svg"
+              priority
+            />
+          </div>
+          <span>{project.date}</span>
+        </div>
 
         <article className="space-y-1">
-          <p>Desctipion:</p>
-
           <PortableText value={project.content} components={components} />
         </article>
       </div>

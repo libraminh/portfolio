@@ -9,6 +9,8 @@ import { getClient } from 'lib/sanity-server';
 import { experiencesQuery, projectsQuery } from 'lib/queries';
 import ArrowRight from 'components/ArrowRight';
 import Experience from 'components/Experience';
+import KeySkills from 'components/KeySkills';
+import AuthorInformation from 'components/AuthorInformation';
 
 export default function Home({ projects, experiences }) {
   const filterTop3FeaturedProjects = projects.filter((proj) => proj.featured);
@@ -16,7 +18,13 @@ export default function Home({ projects, experiences }) {
   return (
     <Suspense fallback={null}>
       <Container>
-        <div className="flex flex-col justify-center items-start max-w-3xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
+        <div className="max-2-xl md:max-w-5xl w-full mx-auto mb-10">
+          <AuthorInformation />
+        </div>
+
+        <div className="flex flex-col justify-center items-start max-2-xl md:max-w-5xl  border-gray-200 dark:border-gray-700 mx-auto pb-16">
+          <KeySkills />
+
           <Experience experiences={experiences} />
 
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">

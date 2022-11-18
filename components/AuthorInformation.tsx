@@ -5,7 +5,7 @@ interface Props {}
 
 const AuthorInformation = (props: Props) => {
   return (
-    <div className="flex flex-col-reverse sm:flex-row items-start">
+    <div className="flex flex-col-reverse sm:flex-row items-start justify-between">
       <div className="flex flex-col pr-8">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
           Minh Le
@@ -22,7 +22,7 @@ const AuthorInformation = (props: Props) => {
         </p>
       </div>
 
-      <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
+      <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0">
         <Image
           alt="Minh Le"
           height={176}

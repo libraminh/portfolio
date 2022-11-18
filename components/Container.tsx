@@ -71,7 +71,7 @@ export default function Container(props) {
       </Head>
 
       <div className="flex flex-col justify-center px-8">
-        <nav className="flex items-center justify-between w-full relative max-w-3xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16 text-gray-900 dark:text-gray-100">
+        <nav className="flex items-center justify-between w-full relative max-2-xl md:max-w-5xl  border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16 text-gray-900 dark:text-gray-100">
           {/* <a href="#skip" className="skip-nav">
             Skip to content
           </a> */}
@@ -124,10 +124,6 @@ export default function Container(props) {
       </div>
 
       <main id="skip" className="flex flex-col justify-center px-8">
-        <div className="max-w-3xl mx-auto">
-          <AuthorInformation />
-        </div>
-
         {children}
         <Footer />
       </main>

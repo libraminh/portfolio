@@ -7,7 +7,7 @@ export default function Uses() {
       title="Uses – Minh Le"
       description="Here's what tech I'm currently using for coding, videos, and music."
     >
-      <article className="flex flex-col justify-center items-start max-w-3xl mx-auto mb-16 w-full">
+      <article className="flex flex-col justify-center items-start max-2-xl md:max-w-5xl  mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           My Gear
         </h1>

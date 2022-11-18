@@ -1,11 +1,10 @@
 import ExperiencePost from './ExperiencePost';
+import { Heading3 } from './Heading3';
 
 const Experience = ({ experiences }) => {
   return (
     <section className="mb-16">
-      <h3 className="font-semibold text-2xl md:text-4xl tracking-tight mb-12 text-black dark:text-white underline underline-offset-4 decoration-dashed">
-        Experience
-      </h3>
+      <Heading3>Experience</Heading3>
 
       <div className="grid gap-10 md:gap-16">
         {experiences?.map((exp) => (
