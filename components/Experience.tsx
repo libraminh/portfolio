@@ -4,7 +4,7 @@ import { Heading3 } from './Heading3';
 const Experience = ({ experiences }) => {
   return (
     <section className="mb-16">
-      <Heading3>Experience</Heading3>
+      <Heading3>Experiences</Heading3>
 
       <div className="grid gap-10 md:gap-16">
         {experiences?.map((exp) => (

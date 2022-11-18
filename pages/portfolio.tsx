@@ -27,7 +27,7 @@ const Portfolio = ({ projects }) => {
                   {project.title}
                 </div>
 
-                <div className="text-sm text-white dark:text-gray-400">
+                <div className="text-sm text-gray-600 dark:text-gray-400">
                   <PortableText value={project.content} />
                 </div>
 
