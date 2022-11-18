@@ -40,7 +40,7 @@ const ExperiencePost = ({ position, company, content, date }: Props) => {
           <p className="text-sm md:text-base capitalize">{position}</p>
         </div>
 
-        <div className="font-light prose-sm md:prose-base text-gray-600 dark:text-white">
+        <div className="font-light prose-sm md:prose-base text-gray-600 dark:text-white prose-p:!m-0">
           <PortableText value={content} />
         </div>
       </figure>
