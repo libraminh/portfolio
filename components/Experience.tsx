@@ -1,11 +1,9 @@
 import ExperiencePost from './ExperiencePost';
 
 const Experience = ({ experiences }) => {
-  console.log('experiences', experiences);
-
   return (
     <section className="mb-16">
-      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-12 text-black dark:text-white underline underline-offset-4 decoration-dashed">
+      <h3 className="font-semibold text-2xl md:text-4xl tracking-tight mb-12 text-black dark:text-white underline underline-offset-4 decoration-dashed">
         Experience
       </h3>
 

@@ -12,7 +12,7 @@ interface Props {
 
 const ExperienceDate = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="inline-flex items-center justify-center rounded-full border boder-solid border-gray-500 dark:border-0 px-5 py-2 dark:bg-gray-400 bg-white dark:text-white text-gray-900">
+    <div className="inline-flex items-center justify-center rounded-full border boder-solid border-gray-500 dark:border-0 px-5 py-2 dark:bg-gray-400 bg-white dark:text-white text-gray-900 text-sm">
       {children}
     </div>
   );
@@ -31,16 +31,16 @@ const ExperiencePost = ({ position, company, content, date }: Props) => {
 
       <div className="hidden md:block w-[1px] flex mx-4 dark:bg-white bg-gray-500"></div>
 
-      <figure className="space-y-3 flex-1">
+      <figure className="space-y-5 flex-1">
         {!isMobile && <ExperienceDate>{date}</ExperienceDate>}
 
         <div className="flex items-baseline space-x-2">
-          <h3 className="text-lg md:text-2xl font-semibold">{position}</h3>
+          <h3 className="text-lg md:text-2xl font-semibold">{company}</h3>
           <span>{'-'}</span>
-          <p className="text-sm md:text-base capitalize">{company}</p>
+          <p className="text-sm md:text-base capitalize">{position}</p>
         </div>
 
-        <div className="font-light prose-sm md:prose-base">
+        <div className="font-light prose-sm md:prose-base text-gray-600 dark:text-white">
           <PortableText value={content} />
         </div>
       </figure>
