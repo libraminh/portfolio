@@ -1,16 +1,16 @@
-import React, { Suspense } from 'react';
-import Link from 'next/link';
+import Link from "next/link";
+import React, { Suspense } from "react";
 
-import Container from '../components/Container';
-import BlogPostCard from '../components/BlogPostCard';
-import Subscribe from '../components/Subscribe';
-import VideoCard from '../components/VideoCard';
-import { getClient } from 'lib/sanity-server';
-import { experiencesQuery, projectsQuery } from 'lib/queries';
-import ArrowRight from 'components/ArrowRight';
-import Experience from 'components/Experience';
-import KeySkills from 'components/KeySkills';
-import AuthorInformation from 'components/AuthorInformation';
+import ArrowRight from "components/ArrowRight";
+import AuthorInformation from "components/AuthorInformation";
+import Experience from "components/Experience";
+import KeySkills from "components/KeySkills";
+import { bgGradient } from "helpers/constants";
+import { experiencesQuery, projectsQuery } from "lib/queries";
+import { getClient } from "lib/sanity-server";
+import BlogPostCard from "../components/BlogPostCard";
+import Container from "../components/Container";
+import VideoCard from "../components/VideoCard";
 
 export default function Home({ projects, experiences }) {
   const filterTop3FeaturedProjects = projects.filter((proj) => proj.featured);
@@ -18,7 +18,7 @@ export default function Home({ projects, experiences }) {
   return (
     <Suspense fallback={null}>
       <Container>
-        <div className="max-2-xl md:max-w-5xl w-full mx-auto mb-10">
+        <div className="max-2-xl md:max-w-5xl w-full mx-auto mb-16">
           <AuthorInformation />
         </div>
 
@@ -31,13 +31,15 @@ export default function Home({ projects, experiences }) {
             Featured Projects
           </h3>
 
-          <div className="grid gap-6">
-            {filterTop3FeaturedProjects?.map((project: any) => (
+          <div className="grid md:grid-cols-3 gap-6">
+            {filterTop3FeaturedProjects?.map((project: any, projectIndex) => (
               <React.Fragment key={project._id}>
                 <BlogPostCard
                   title={project.title}
                   slug={project.slug.current}
-                  gradient="from-[#D8B4FE] to-[#818CF8]"
+                  gradient={
+                    bgGradient[Math.floor(Math.random() * bgGradient.length)]
+                  }
                   content={project.content}
                   url={project.url}
                   date={project.date}
@@ -56,57 +58,7 @@ export default function Home({ projects, experiences }) {
             </Link>
           </div>
 
-          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
-            Featured Projects
-          </h3>
-
-          <div className="flex gap-6 flex-col md:flex-row mb-16">
-            <BlogPostCard
-              title="SGBC - Home Planner"
-              slug="portfolio-sgbc-home-planner"
-              gradient="from-[#D8B4FE] to-[#818CF8]"
-              content="lorem"
-            />
-
-            <BlogPostCard
-              title="Rust Is The Future of JavaScript Infrastructure"
-              slug="rust"
-              gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
-              content="lorem"
-            />
-
-            <BlogPostCard
-              title="Past, Present, and Future of React State Management"
-              slug="react-state-management"
-              gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
-              content="lorem"
-            />
-          </div>
-
-          <Link
-            href="/blog"
-            className="flex items-center mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"
-          >
-            <>
-              {'Read all posts'}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="h-6 w-6 ml-1"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
-                />
-              </svg>
-            </>
-          </Link>
-
-          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
+          {/* <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
             Learn React & Next.js
           </h3>
           <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -159,9 +111,9 @@ export default function Home({ projects, experiences }) {
                 d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
               />
             </svg>
-          </a>
-          <span className="h-16" />
-          <Subscribe />
+          </a> */}
+          {/* <span className="h-16" /> */}
+          {/* <Subscribe /> */}
         </div>
       </Container>
     </Suspense>

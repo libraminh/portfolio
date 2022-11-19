@@ -1,12 +1,12 @@
-import Container from 'components/Container';
-import { mdxToHtml } from 'lib/mdx';
-import { projectQuery, projectsSlugsQuery } from 'lib/queries';
-import { getClient, sanityClient } from 'lib/sanity-server';
-import Link from 'next/link';
-import { PortableText } from '@portabletext/react';
-import urlBuilder from '@sanity/image-url';
-import { getImageDimensions } from '@sanity/asset-utils';
-import Image from 'next/image';
+import Container from "components/Container";
+import { mdxToHtml } from "lib/mdx";
+import { projectQuery, projectsSlugsQuery } from "lib/queries";
+import { getClient, sanityClient } from "lib/sanity-server";
+import Link from "next/link";
+import { PortableText } from "@portabletext/react";
+import urlBuilder from "@sanity/image-url";
+import { getImageDimensions } from "@sanity/asset-utils";
+import Image from "next/image";
 
 // Barebones lazy-loaded image component
 const SampleImageComponent = ({ value, isInline }) => {
@@ -18,14 +18,14 @@ const SampleImageComponent = ({ value, isInline }) => {
         src={urlBuilder()
           .image(value)
           .width(isInline ? 100 : 800)
-          .fit('max')
-          .auto('format')
+          .fit("max")
+          .auto("format")
           .url()}
-        alt={value.alt || ' '}
+        alt={value.alt || " "}
         loading="lazy"
         style={{
           // Display alongside text if image appears inside a block text span
-          display: isInline ? 'inline-block' : 'block',
+          display: isInline ? "inline-block" : "block",
 
           // Avoid jumping around with aspect-ratio CSS property
           aspectRatio: width / height
@@ -60,16 +60,16 @@ const PortfolioPage = ({ project }) => {
           </p>
         </div>
 
-        <div className="flex justify-between space-x-5">
+        <div className="flex flex-col md:flex-row md:justify-between md:space-x-5 space-y-5 md:space-y-0">
           <h1 className="text-2xl font-bold tracking-tight text-black md:text-3xl dark:text-white flex-1">
             {project.title}
           </h1>
 
-          <div className="basis-24">
+          <div className="md:basis-32">
             <Link
               href={project.url}
               target="_blank"
-              className="transform ring-2 ring-offset-2 ring-offset-white/50 hover:ring-offset-white transition-all py-2 px-3 inline-flex justify-center items-center rounded-lg text-sm text-center"
+              className="transform ring-2 ring-offset-2 ring-offset-white/50 hover:ring-offset-white transition-all py-3 px-5 inline-flex justify-center items-center rounded-xl text-sm text-center"
             >
               Visit Site
             </Link>
@@ -105,7 +105,7 @@ export async function getStaticPaths() {
   const paths = await sanityClient.fetch(projectsSlugsQuery);
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: 'blocking'
+    fallback: "blocking"
   };
 }
 
@@ -118,17 +118,9 @@ export async function getStaticProps({ params, preview = false }) {
     return { notFound: true };
   }
 
-  // const { html, tweetIDs, readingTime } = await mdxToHtml(project.content);
-  // const tweets = await getTweets(tweetIDs);
-
   return {
     props: {
-      project: {
-        ...project
-        // content: html
-        // tweets,
-        // readingTime
-      }
+      project
     }
   };
 }

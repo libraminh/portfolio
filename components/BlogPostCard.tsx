@@ -1,10 +1,7 @@
-import Link from 'next/link';
-import useSWR from 'swr';
-import cn from 'classnames';
+import cn from "classnames";
+import Link from "next/link";
 
-import fetcher from 'lib/fetcher';
-import { Views } from 'lib/types';
-import { PortableText } from '@portabletext/react';
+import { PortableText } from "@portabletext/react";
 
 interface Props {
   title: string;
@@ -23,17 +20,13 @@ export default function BlogPostCard({
   url,
   date
 }: Props) {
-  // const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
-  // const views = data?.total;
-
   return (
     <Link
       href={`/portfolio/${slug}`}
       className={cn(
-        'transform ', // hover:scale-[1.01] transition-all
-        'rounded-xl w-full bg-gradient-to-r p-1',
-        'ring-2 ring-offset-2'
-        // gradient
+        "transform hover:scale-[1.01] transition",
+        "rounded-lg w-full bg-gradient-to-r p-0.5",
+        gradient
       )}
     >
       <div className="flex flex-col justify-between h-full bg-white dark:bg-gray-900 rounded-lg p-4">
@@ -48,7 +41,7 @@ export default function BlogPostCard({
             </span>
           </div>
 
-          <div className="text-gray-900 dark:text-gray-100 text-sm pt-3">
+          <div className=" text-sm pt-3 line-clamp-2 text-gray-600 dark:text-gray-300 ">
             <PortableText value={content} />
           </div>
         </div>

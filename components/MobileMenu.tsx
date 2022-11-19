@@ -45,7 +45,7 @@ export default function MobileMenu() {
         <ul
           className={cn(
             styles.menu,
-            'flex flex-col absolute bg-gray-100 dark:bg-gray-900',
+            'flex flex-col absolute bg-gray-100 dark:bg-zinc-900',
             isMenuRendered && styles.menuRendered
           )}
         >
@@ -58,6 +58,22 @@ export default function MobileMenu() {
             </Link>
           </li>
           <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            style={{ transitionDelay: '150ms' }}
+          >
+            <Link href="/about" className="flex w-auto pb-4">
+              About
+            </Link>
+          </li>
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            style={{ transitionDelay: '150ms' }}
+          >
+            <Link href="/portfolio" className="flex w-auto pb-4">
+              Portfolio
+            </Link>
+          </li>
+          {/* <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '175ms' }}
           >
@@ -112,7 +128,7 @@ export default function MobileMenu() {
             <Link href="/uses" className="flex w-auto pb-4">
               Uses
             </Link>
-          </li>
+          </li> */}
         </ul>
       )}
     </>

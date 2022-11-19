@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import NowPlaying from 'components/NowPlaying';
+import NowPlaying from "components/NowPlaying";
 
 const ExternalLink = ({ href, children }) => (
   <a
@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col justify-center items-start max-2-xl md:max-w-5xl  mx-auto w-full mb-8">
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
-      <NowPlaying />
+      {/* <NowPlaying /> */}
       <div className="w-full max-2-xl md:max-w-5xl  grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
         <div className="flex flex-col space-y-4">
           <Link

@@ -4,7 +4,7 @@ interface Props {}
 
 const KeySkills = (props: Props) => {
   return (
-    <section className="mb-16">
+    <section className="mb-12">
       <Heading3>Key Skills</Heading3>
 
       <div className="prose-sm md:prose-base text-gray-600 dark:text-white">
