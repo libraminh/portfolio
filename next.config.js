@@ -3,15 +3,9 @@
  */
 module.exports = {
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
     ignoreDuringBuilds: true
   },
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
     ignoreBuildErrors: true
   },
   reactStrictMode: true,
@@ -27,15 +21,15 @@ module.exports = {
     fontLoaders: [
       { loader: "@next/font/google", options: { subsets: ["latin"] } }
     ]
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: securityHeaders
-      }
-    ];
   }
+  // async headers() {
+  //   return [
+  //     {
+  //       source: "/(.*)",
+  //       headers: securityHeaders
+  //     }
+  //   ];
+  // }
 };
 
 // https://nextjs.org/docs/advanced-features/security-headers

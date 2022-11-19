@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import AvatarImage from "/public/avatar.jpg";
 
 interface Props {}
 
