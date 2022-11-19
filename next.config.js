@@ -14,7 +14,9 @@ module.exports = {
       "i.scdn.co", // Spotify Album Art
       "pbs.twimg.com", // Twitter Profile Picture
       "cdn.sanity.io",
-      "minhle.netlify.app"
+      "minhle.netlify.app",
+      "scontent.fsgn2-4.fna.fbcdn.net",
+      "facebook.com"
     ]
   },
   experimental: {

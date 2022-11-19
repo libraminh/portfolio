@@ -6,6 +6,7 @@ import avatarBW from "public/avatar-bw.jpg";
 import avatar from "public/avatar.jpg";
 import ReactCertImage from "public/react-cert.png";
 import CssCertImage from "public/css-cert.png";
+import { avatarUrl } from "helpers/constants";
 
 export default function About() {
   return (
@@ -20,7 +21,7 @@ export default function About() {
             <Image
               alt="Minh Le headshot"
               width={400}
-              src={avatar}
+              src={avatarUrl}
               className="rounded-2xl aspect-square mb-10 md:mb-16"
             />
             <SocialContact />
