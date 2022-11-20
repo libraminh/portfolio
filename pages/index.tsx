@@ -121,8 +121,10 @@ export default function Home({ projects, experiences }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const projects = await getClient(preview).fetch(projectsQuery);
-  const experiences = await getClient(preview).fetch(experiencesQuery);
+  const projects = getClient(preview).fetch(projectsQuery);
+  const experiences = getClient(preview).fetch(experiencesQuery);
 
-  return { props: { projects, experiences } };
+  const responses = await Promise.all([projects, experiences]);
+
+  return { props: { projects: responses[0], experiences: responses[1] } };
 }
