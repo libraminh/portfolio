@@ -27,13 +27,20 @@ const AuthorInformation = (props: Props) => {
       </div>
 
       <div className="w-[80px] sm:w-[176px] sm:basis-[176px] relative mb-8 sm:mb-0">
-        <Image
+        {/* <Image
           alt="Minh Le"
           height={176}
           width={176}
           src={avatarUrl}
           sizes="30vw"
           priority
+          className="rounded-full filter grayscale"
+        /> */}
+
+        {/* eslint-disable-next-line */}
+        <img
+          src={"/avatar.jpg"}
+          alt="avatar"
           className="rounded-full filter grayscale"
         />
       </div>

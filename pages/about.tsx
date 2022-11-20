@@ -49,22 +49,36 @@ export default function About({ aboutBio }) {
 
             <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-5 space-y-5 sm:space-y-0">
               <a href="/react-cert.png" target={"_blank"}>
-                <Image
+                {/* <Image
                   src={`https://res.cloudinary.com/dlfxcpjvo/image/upload/v1668925514/portfolio/react-cert_s9c6mx.png`}
                   width={250}
                   height={150}
                   quality={100}
                   alt="cert-image"
                   className="rounded-lg m-0 w-full sm:w-auto"
+                /> */}
+
+                {/* eslint-disable-next-line */}
+                <img
+                  src={"/react-cert.png"}
+                  alt="cert-image"
+                  className="rounded-lg m-0 w-full sm:w-auto"
                 />
               </a>
 
               <a href="/css-cert.png" target={"_blank"}>
-                <Image
+                {/* <Image
                   src={`https://res.cloudinary.com/dlfxcpjvo/image/upload/v1668925508/portfolio/css-cert_jnvdqo.png`}
                   width={250}
                   height={150}
                   quality={100}
+                  alt="cert-image"
+                  className="rounded-lg m-0 w-full sm:w-auto"
+                /> */}
+
+                {/* eslint-disable-next-line */}
+                <img
+                  src={"/css-cert.png"}
                   alt="cert-image"
                   className="rounded-lg m-0 w-full sm:w-auto"
                 />
