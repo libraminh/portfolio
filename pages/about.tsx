@@ -8,6 +8,7 @@ import CssCertImage from "public/css-cert.png";
 import { getClient } from "lib/sanity-server";
 import { bioQuery } from "lib/queries";
 import { PortableText } from "@portabletext/react";
+import { avatarUrl } from "helpers/constants";
 
 export default function About({ aboutBio }) {
   console.log("aboutBio", aboutBio);
@@ -24,9 +25,11 @@ export default function About({ aboutBio }) {
             <Image
               alt="avatar"
               width={400}
-              src={avatar}
+              height={400}
+              src={avatarUrl}
               className="rounded-2xl aspect-square mb-10 md:mb-16"
             />
+
             <SocialContact />
           </figure>
 
@@ -45,7 +48,7 @@ export default function About({ aboutBio }) {
             <div className="flex items-center space-x-5">
               <a href="/react-cert.png">
                 <Image
-                  src={ReactCertImage}
+                  src={`https://res.cloudinary.com/dlfxcpjvo/image/upload/v1668925514/portfolio/react-cert_s9c6mx.png`}
                   width={200}
                   quality={100}
                   alt="cert-image"
@@ -55,7 +58,7 @@ export default function About({ aboutBio }) {
 
               <a href="/css-cert.png">
                 <Image
-                  src={CssCertImage}
+                  src={`https://res.cloudinary.com/dlfxcpjvo/image/upload/v1668925508/portfolio/css-cert_jnvdqo.png`}
                   width={200}
                   quality={100}
                   alt="cert-image"

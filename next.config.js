@@ -9,15 +9,17 @@ module.exports = {
     ignoreBuildErrors: true
   },
   reactStrictMode: true,
+
   images: {
+    // loader: "cloudinary",
     domains: [
       "i.scdn.co", // Spotify Album Art
       "pbs.twimg.com", // Twitter Profile Picture
       "cdn.sanity.io",
       "minhle.netlify.app",
-      "scontent.fsgn2-4.fna.fbcdn.net",
-      "facebook.com"
+      "res.cloudinary.com"
     ]
+    // path: "https://res.cloudinary.com/dlfxcpjvo/image/upload"
   },
   experimental: {
     fontLoaders: [

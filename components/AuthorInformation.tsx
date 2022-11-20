@@ -1,3 +1,4 @@
+import { avatarUrl } from "helpers/constants";
 import Image from "next/image";
 import React from "react";
 import AvatarImage from "/public/avatar.jpg";
@@ -30,7 +31,7 @@ const AuthorInformation = (props: Props) => {
           alt="Minh Le"
           height={176}
           width={176}
-          src={AvatarImage}
+          src={avatarUrl}
           sizes="30vw"
           priority
           className="rounded-full filter grayscale"
