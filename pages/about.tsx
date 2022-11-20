@@ -6,6 +6,7 @@ import SocialContact from "components/SocialContact";
 import { avatarUrl } from "helpers/constants";
 import { bioQuery } from "lib/queries";
 import { getClient } from "lib/sanity-server";
+import ReactCertImage from "/public/react-cert.png";
 
 export default function About({ aboutBio }) {
   return (
@@ -17,20 +18,20 @@ export default function About({ aboutBio }) {
 
         <div className="grid md:grid-cols-3 gap-10">
           <figure className="col-span-1">
-            {/* <Image
+            <Image
               alt="avatar"
               width={400}
               height={400}
-              src={avatarUrl}
+              src={"/avatar.jpg"}
               className="rounded-2xl aspect-square mb-10 md:mb-16"
-            /> */}
+            />
 
             {/* eslint-disable-next-line */}
-            <img
+            {/* <img
               src={"/avatar.jpg"}
               alt="avatar"
               className="rounded-2xl aspect-square mb-10 md:mb-16"
-            />
+            /> */}
 
             <SocialContact />
           </figure>
@@ -49,39 +50,39 @@ export default function About({ aboutBio }) {
 
             <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-5 space-y-5 sm:space-y-0">
               <a href="/react-cert.png" target={"_blank"}>
-                {/* <Image
-                  src={`https://res.cloudinary.com/dlfxcpjvo/image/upload/v1668925514/portfolio/react-cert_s9c6mx.png`}
+                <Image
+                  src={ReactCertImage}
                   width={250}
                   height={150}
                   quality={100}
                   alt="cert-image"
                   className="rounded-lg m-0 w-full sm:w-auto"
-                /> */}
+                />
 
                 {/* eslint-disable-next-line */}
-                <img
+                {/* <img
                   src={"/react-cert.png"}
                   alt="cert-image"
                   className="rounded-lg m-0 w-full sm:w-auto"
-                />
+                /> */}
               </a>
 
               <a href="/css-cert.png" target={"_blank"}>
-                {/* <Image
-                  src={`https://res.cloudinary.com/dlfxcpjvo/image/upload/v1668925508/portfolio/css-cert_jnvdqo.png`}
+                <Image
+                  src={`/css-cert.png`}
                   width={250}
                   height={150}
                   quality={100}
                   alt="cert-image"
                   className="rounded-lg m-0 w-full sm:w-auto"
-                /> */}
+                />
 
                 {/* eslint-disable-next-line */}
-                <img
+                {/* <img
                   src={"/css-cert.png"}
                   alt="cert-image"
                   className="rounded-lg m-0 w-full sm:w-auto"
-                />
+                /> */}
               </a>
             </div>
 
