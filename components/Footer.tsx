@@ -18,7 +18,7 @@ export default function Footer() {
     <footer className="flex flex-col justify-center items-start max-2-xl md:max-w-5xl  mx-auto w-full mb-8">
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
       {/* <NowPlaying /> */}
-      <div className="w-full max-2-xl md:max-w-5xl pb-16">
+      <div className="w-full max-2-xl md:max-w-5xl">
         <div className="flex flex-col space-y-5 md:space-y-0 md:flex-row justify-between items-baseline">
           <figure className="flex space-x-4">
             <Link

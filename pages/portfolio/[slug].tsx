@@ -69,7 +69,7 @@ const PortfolioPage = ({ project }) => {
             <Link
               href={project.url}
               target="_blank"
-              className="transform ring-2 ring-offset-2 ring-offset-white/50 hover:ring-offset-white transition-all py-3 px-5 inline-flex justify-center items-center rounded-xl text-sm text-center"
+              className="transform ring-2 ring-offset-2 ring-offset-white/50 hover:ring-offset-white transition-all py-3 px-5 inline-flex justify-center items-center rounded-xl text-sm text-center dark:text-white text-gray-600"
             >
               Visit Site
             </Link>
@@ -86,11 +86,13 @@ const PortfolioPage = ({ project }) => {
               priority
             />
           </div>
-          <span>{project.date}</span>
+          <span className="dark:text-white text-gray-600">{project.date}</span>
         </div>
 
         <article className="space-y-1">
-          <h2 className="text-lg font-semibold mb-5">Project in detail:</h2>
+          <h2 className="text-lg font-semibold mb-5 dark:text-white text-gray-600">
+            Project in detail:
+          </h2>
 
           <div className="prose dark:prose-dark max-w-none">
             <PortableText value={project.content} components={components} />
