@@ -25,11 +25,11 @@ export default function BlogPostCard({
       href={`/portfolio/${slug}`}
       className={cn(
         "transform hover:scale-[1.01] transition",
-        "rounded-lg w-full bg-gradient-to-r p-0.5",
+        "rounded-2xl w-full bg-gradient-to-r p-0.5",
         gradient
       )}
     >
-      <div className="flex flex-col justify-between h-full bg-white dark:bg-gray-900 rounded-lg p-4">
+      <div className="flex flex-col justify-between h-full bg-white dark:bg-gray-900 rounded-2xl p-4">
         <div className="flex flex-col justify-between space-y-3 divide-y">
           <div>
             <h4 className="text-lg md:text-lg font-medium text-gray-900 dark:text-gray-100 tracking-tight">

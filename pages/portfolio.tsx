@@ -25,7 +25,7 @@ const Portfolio = ({ projects }) => {
               } bg-gradient-to-r md:dark:bg-zinc-900 md:bg-transparent block border md:border-0 rounded-2xl md:border-white group/portfolio text-gray-900 dark:text-gray-200 relative p-0.5 md:p-0`}
               href={`/portfolio/${project.slug.current}`}
             >
-              <figure className="dark:bg-zinc-900 md:bg-transparent p-5 h-full rounded-2xl md:rounded-none">
+              <figure className="dark:bg-zinc-900 bg-white p-5 h-full rounded-2xl md:rounded-none">
                 <div className="flex mb-2 space-x-2 text-lg relative z-20">
                   {project.title}
                 </div>

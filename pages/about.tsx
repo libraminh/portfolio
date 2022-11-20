@@ -26,13 +26,6 @@ export default function About({ aboutBio }) {
               className="rounded-2xl aspect-square mb-10 md:mb-16"
             />
 
-            {/* eslint-disable-next-line */}
-            {/* <img
-              src={"/avatar.jpg"}
-              alt="avatar"
-              className="rounded-2xl aspect-square mb-10 md:mb-16"
-            /> */}
-
             <SocialContact />
           </figure>
 
@@ -58,13 +51,6 @@ export default function About({ aboutBio }) {
                   alt="cert-image"
                   className="rounded-lg m-0 w-full sm:w-auto"
                 />
-
-                {/* eslint-disable-next-line */}
-                {/* <img
-                  src={"/react-cert.png"}
-                  alt="cert-image"
-                  className="rounded-lg m-0 w-full sm:w-auto"
-                /> */}
               </a>
 
               <a href="/css-cert.png" target={"_blank"}>
@@ -76,13 +62,6 @@ export default function About({ aboutBio }) {
                   alt="cert-image"
                   className="rounded-lg m-0 w-full sm:w-auto"
                 />
-
-                {/* eslint-disable-next-line */}
-                {/* <img
-                  src={"/css-cert.png"}
-                  alt="cert-image"
-                  className="rounded-lg m-0 w-full sm:w-auto"
-                /> */}
               </a>
             </div>
 

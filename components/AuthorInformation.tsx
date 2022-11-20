@@ -36,13 +36,6 @@ const AuthorInformation = (props: Props) => {
           priority
           className="rounded-full filter grayscale"
         />
-
-        {/* eslint-disable-next-line */}
-        {/* <img
-          src={"/avatar.jpg"}
-          alt="avatar"
-          className="rounded-full filter grayscale"
-        /> */}
       </div>
     </div>
   );
