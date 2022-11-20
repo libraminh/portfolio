@@ -124,7 +124,10 @@ export async function getStaticProps({ preview = false }) {
   const projects = getClient(preview).fetch(projectsQuery);
   const experiences = getClient(preview).fetch(experiencesQuery);
 
-  const responses = await Promise.all([projects, experiences]);
-
-  return { props: { projects: responses[0], experiences: responses[1] } };
+  try {
+    const responses = await Promise.all([projects, experiences]);
+    return { props: { projects: responses[0], experiences: responses[1] } };
+  } catch (error) {
+    console.log(error);
+  }
 }
