@@ -17,11 +17,18 @@ export default function About({ aboutBio }) {
 
         <div className="grid md:grid-cols-3 gap-10">
           <figure className="col-span-1">
-            <Image
+            {/* <Image
               alt="avatar"
               width={400}
               height={400}
               src={avatarUrl}
+              className="rounded-2xl aspect-square mb-10 md:mb-16"
+            /> */}
+
+            {/* eslint-disable-next-line */}
+            <img
+              src={"/avatar.jpg"}
+              alt="avatar"
               className="rounded-2xl aspect-square mb-10 md:mb-16"
             />
 

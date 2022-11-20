@@ -11,3 +11,5 @@
 [build]
   command = "pnpm run build"
   publish = ".next"
+
+DISABLE_IPX = true
