@@ -1,6 +1,13 @@
 [[plugins]]
-package = "@netlify/plugin-nextjs"
+  package = "@netlify/plugin-nextjs"
+
+[[headers]]
+  for = "/_next/image/*"
+
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000"
+    X-Test = 'foobar'
 
 [build]
-command = "pnpm run build"
-publish = ".next"
+  command = "pnpm run build"
+  publish = ".next"
