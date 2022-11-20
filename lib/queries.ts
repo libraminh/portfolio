@@ -29,6 +29,9 @@ export const experiencesQuery = `
 export const projectsQuery = `
 *[_type == "projects"] | order(date desc, _updatedAt desc)`;
 
+export const bioQuery = `
+*[_type == "about"]`;
+
 export const projectsSlugsQuery = `
 *[_type == "projects" && defined(slug.current)][].slug.current
 `;
