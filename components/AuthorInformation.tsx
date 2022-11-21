@@ -1,6 +1,7 @@
 import { avatarUrl } from "helpers/constants";
 import Image from "next/image";
 import React from "react";
+import DownloadCV from "./DownloadCV";
 import AvatarImage from "/public/avatar.jpg";
 
 interface Props {}
@@ -24,6 +25,10 @@ const AuthorInformation = (props: Props) => {
           as a professional Web developer, I have acquired the skills and
           knowledge necessary to make your project a success.
         </p>
+
+        <figure>
+          <DownloadCV />
+        </figure>
       </div>
 
       <div className="w-[80px] sm:w-[176px] sm:basis-[176px] relative mb-8 sm:mb-0">

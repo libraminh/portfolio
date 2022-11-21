@@ -38,8 +38,8 @@ export default function Container(props) {
   const router = useRouter();
 
   const meta = {
-    title: "Minh Le – Developer, writer, creator.",
-    description: `Front-end developer, JavaScript enthusiast, and course creator.`,
+    title: "Minh Le – Front-end Developer.",
+    description: `Front-end developer, JavaScript enthusiast.`,
     image:
       "https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/310325270_5862262787152459_2785122904639874180_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=j6JsW-qHPmEAX9OiGrD&_nc_ht=scontent.fsgn5-8.fna&oh=00_AfCUMY_YISIJtzR3MPWuk9-ORPwlyGO-frQhQA_9fc10eg&oe=637AD256",
     type: "website",

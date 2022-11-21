@@ -1,20 +1,16 @@
-import Link from "next/link";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 
-import ArrowRight from "components/ArrowRight";
 import AuthorInformation from "components/AuthorInformation";
 import Experience from "components/Experience";
 import KeySkills from "components/KeySkills";
-import { bgGradient } from "helpers/constants";
+import FeaturedProjects from "features/FeaturedProjects";
 import { experiencesQuery, projectsQuery } from "lib/queries";
 import { getClient } from "lib/sanity-server";
-import BlogPostCard from "../components/BlogPostCard";
 import Container from "../components/Container";
-import VideoCard from "../components/VideoCard";
+import { getProjects } from "api/getProjects";
 
 export default function Home({ projects, experiences }) {
-  const filterTop3FeaturedProjects = projects.filter((proj) => proj.featured);
-
+  console.log("projects", projects);
   return (
     <Suspense fallback={null}>
       <Container>
@@ -22,41 +18,12 @@ export default function Home({ projects, experiences }) {
           <AuthorInformation />
         </div>
 
-        <div className="flex flex-col justify-center items-start max-2-xl md:max-w-5xl  border-gray-200 dark:border-gray-700 mx-auto pb-16">
+        <div className="w-full flex flex-col justify-center items-start max-2-xl md:max-w-5xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
           <KeySkills />
 
           <Experience experiences={experiences} />
 
-          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
-            Featured Projects
-          </h3>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {filterTop3FeaturedProjects?.map((project: any, projectIndex) => (
-              <React.Fragment key={project._id}>
-                <BlogPostCard
-                  title={project.title}
-                  slug={project.slug.current}
-                  gradient={
-                    bgGradient[Math.floor(Math.random() * bgGradient.length)]
-                  }
-                  content={project.content}
-                  url={project.url}
-                  date={project.date}
-                />
-              </React.Fragment>
-            ))}
-          </div>
-
-          <div className="mb-16">
-            <Link
-              href="/portfolio"
-              className="flex items-center mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all"
-            >
-              Read all projects
-              <ArrowRight />
-            </Link>
-          </div>
+          <FeaturedProjects projects={projects} />
 
           {/* <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
             Learn React & Next.js
@@ -121,13 +88,14 @@ export default function Home({ projects, experiences }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const projects = getClient(preview).fetch(projectsQuery);
-  const experiences = getClient(preview).fetch(experiencesQuery);
+  // const projects = getClient(preview).fetch(projectsQuery);
+  const experiences = await getClient(preview).fetch(experiencesQuery);
+  const projectsResponse = await getProjects();
 
-  try {
-    const responses = await Promise.all([projects, experiences]);
-    return { props: { projects: responses[0], experiences: responses[1] } };
-  } catch (error) {
-    console.log(error);
-  }
+  return {
+    props: {
+      projects: projectsResponse.data,
+      experiences
+    }
+  };
 }

@@ -94,7 +94,7 @@ const PortfolioPage = ({ project }) => {
             Project in detail:
           </h2>
 
-          <div className="prose dark:prose-dark max-w-none">
+          <div className="prose dark:prose-dark max-w-none prose-ul:pl-10 prose-ul:mt-0 prose-p:mb-2">
             <PortableText value={project.content} components={components} />
           </div>
         </article>

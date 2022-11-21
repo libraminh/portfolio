@@ -40,7 +40,7 @@ const Portfolio = ({ projects }) => {
                 </p>
               </figure>
 
-              <div className="absolute inset-0 scale-0 group-hover/portfolio:scale-100 opacity-0 group-hover/portfolio:opacity-100 group-hover/portfolio:bg-zinc-800/50 z-10 rounded-2xl transition-all"></div>
+              <div className="absolute inset-0 scale-0 group-hover/portfolio:scale-100 opacity-0 group-hover/portfolio:opacity-100  bg-zinc-50 dark:bg-zinc-800/50 z-10 rounded-2xl transition-all"></div>
             </Link>
           ))}
         </div>

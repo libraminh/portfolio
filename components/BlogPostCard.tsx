@@ -41,7 +41,7 @@ export default function BlogPostCard({
             </span>
           </div>
 
-          <div className=" text-sm pt-3 line-clamp-2 text-gray-600 dark:text-gray-300 ">
+          <div className=" text-sm pt-3 line-clamp-2 text-gray-600 dark:text-gray-300">
             <PortableText value={content} />
           </div>
         </div>

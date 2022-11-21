@@ -4,6 +4,7 @@ module.exports = {
   content: [
     "./pages/**/*.tsx",
     "./helpers/**/*.{tsx,ts}",
+    "./features/**/*.{tsx,ts}",
     "./components/**/*.tsx",
     "./layouts/**/*.tsx"
   ],

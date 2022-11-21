@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import DownloadCV from "./DownloadCV";
 import IconGithub from "./IconGithub";
 import LinkedinIcon from "./LinkedinIcon";
 
@@ -122,13 +123,7 @@ const SocialContact = (props: Props) => {
             </li> */}
 
       <li>
-        <a
-          download
-          href="https://www.topcv.vn/download-cv?cv_id=ClsCAgVWWlZQAVBSAAEFVQcGVQ1bAA4OVQdQVA71f3&dontcount=1"
-          className="mt-5 transform ring-2 ring-offset-2 dark:ring-offset-white/50 hover:dark:ring-offset-white transition-all py-3 px-8 inline-flex justify-center items-center rounded-xl text-sm text-center dark:text-white text-gray-600"
-        >
-          Download CV
-        </a>
+        <DownloadCV />
       </li>
     </ul>
   );
