@@ -69,7 +69,7 @@ const PortfolioPage = ({ project }) => {
             <Link
               href={project.url}
               target="_blank"
-              className="transform ring-2 ring-offset-2 ring-offset-white/50 hover:ring-offset-white transition-all py-3 px-5 inline-flex justify-center items-center rounded-xl text-sm text-center dark:text-white text-gray-600"
+              className="transform ring-2 ring-offset-2 ring-offset-white/50 hover:ring-offset-white transition-all py-3 px-5 inline-flex justify-center items-center rounded-xl text-sm text-center dark:text-white text-gray-600 font-semibold"
             >
               Visit Site
             </Link>
@@ -77,7 +77,7 @@ const PortfolioPage = ({ project }) => {
         </div>
 
         <div className="flex items-center space-x-5">
-          <div className="bg-white flex items-center justify-center w-10 h-10 rounded-full">
+          <div className="border border-gray-400 dark:border-0 dark:bg-white flex items-center justify-center w-10 h-10 rounded-full">
             <Image
               alt="Minh Le"
               height={22}

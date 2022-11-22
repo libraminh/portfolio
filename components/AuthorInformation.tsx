@@ -14,7 +14,7 @@ const AuthorInformation = (props: Props) => {
           Minh Le
         </h1>
 
-        <h2 className="text-gray-700 dark:text-gray-200 mb-4">
+        <h2 className="text-gray-600 dark:text-gray-200 mb-4">
           Frontend Developer at{" "}
           <span className="font-semibold">Construct Digital</span>
         </h2>
@@ -26,7 +26,7 @@ const AuthorInformation = (props: Props) => {
           knowledge necessary to make your project a success.
         </p>
 
-        <figure>
+        <figure className="mt-3">
           <DownloadCV />
         </figure>
       </div>

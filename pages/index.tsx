@@ -7,10 +7,8 @@ import FeaturedProjects from "features/FeaturedProjects";
 import { experiencesQuery, projectsQuery } from "lib/queries";
 import { getClient } from "lib/sanity-server";
 import Container from "../components/Container";
-import { getProjects } from "api/getProjects";
 
 export default function Home({ projects, experiences }) {
-  console.log("projects", projects);
   return (
     <Suspense fallback={null}>
       <Container>
@@ -88,13 +86,13 @@ export default function Home({ projects, experiences }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  // const projects = getClient(preview).fetch(projectsQuery);
+  const projects = await getClient(preview).fetch(projectsQuery);
   const experiences = await getClient(preview).fetch(experiencesQuery);
-  const projectsResponse = await getProjects();
+  // const projectsResponse = await getProjects();
 
   return {
     props: {
-      projects: projectsResponse.data,
+      projects,
       experiences
     }
   };

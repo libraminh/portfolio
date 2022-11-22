@@ -34,13 +34,13 @@ const Portfolio = ({ projects }) => {
                   <PortableText value={project.content} />
                 </div>
 
-                <p className="relative z-20 mt-4 flex items-center text-sm font-medium text-zinc-400 transition group-hover/portfolio:text-teal-500 dark:text-zinc-200">
+                <p className="relative z-20 mt-4 flex items-center text-sm font-medium text-zinc-500 transition group-hover/portfolio:text-teal-500 dark:text-zinc-200">
                   <IconLinked />
                   <span className="ml-2">read more</span>
                 </p>
               </figure>
 
-              <div className="absolute inset-0 scale-0 group-hover/portfolio:scale-100 opacity-0 group-hover/portfolio:opacity-100  bg-zinc-50 dark:bg-zinc-800/50 z-10 rounded-2xl transition-all"></div>
+              <div className="absolute inset-0 scale-0 group-hover/portfolio:scale-100 opacity-0 group-hover/portfolio:opacity-100 bg-zinc-100 dark:bg-zinc-800/50 z-10 rounded-2xl transition-all"></div>
             </Link>
           ))}
         </div>

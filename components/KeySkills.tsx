@@ -1,4 +1,4 @@
-import { Heading3 } from './Heading3';
+import { Heading3 } from "./Heading3";
 
 interface Props {}
 
@@ -10,18 +10,16 @@ const KeySkills = (props: Props) => {
       <div className="prose-sm md:prose-base text-gray-600 dark:text-white">
         <ul className="list-disc !mt-0">
           <li>HTML5, CSS3, SASS/SCSS, JavaScript, ES6, Promise, Tailwindcss</li>
-
           <li>
             ReactJS with Redux, Redux-Thunk, Redux Toolkit, Mobx, Hooks,
             React-Query
           </li>
-
           <li>VueJS with Vuex, Vue-Router</li>
-
           <li>MongoDB, Firebase, Node JS, NestJS, Express, Passport & JWT</li>
           <li>Webpack, Gulp, Yeoman</li>
           <li>Animation with ScrollMagic and GSAP</li>
-          <li>Git, Github, SourceTree</li>
+          <li>Git, Github, Gitlab, SourceTree</li>
+          <li>Asana, Streamtime, Trello, Jira</li>
           <li>Hubspot, Email template</li>
           <li>Converting PSD to HTML/CSS template</li>
           <li>Building responsive websites.</li>

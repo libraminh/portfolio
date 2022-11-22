@@ -12,7 +12,7 @@ export default function About({ aboutBio }) {
   return (
     <Container title="About – Minh Le">
       <div className="flex flex-col justify-center items-start max-2-xl md:max-w-5xl  mx-auto mb-16 w-full">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-16 text-black dark:text-white">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-10 md:mb-16 text-black dark:text-white">
           About Me
         </h1>
 

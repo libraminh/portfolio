@@ -123,7 +123,7 @@ export default function Container(props) {
         </nav>
       </div>
 
-      <main id="skip" className="flex flex-col justify-center px-8">
+      <main id="skip" className="flex flex-col justify-center px-10">
         {children}
         <Footer />
       </main>

@@ -9,11 +9,7 @@ interface Props {
 }
 
 const FeaturedProjects = ({ projects }: Props) => {
-  const filterTop3FeaturedProjects = projects.filter(
-    (proj) => proj.attributes.featured
-  );
-
-  console.log("filterTop3FeaturedProjects", filterTop3FeaturedProjects);
+  const filterTop3FeaturedProjects = projects.filter((proj) => proj.featured);
 
   return (
     <>
@@ -23,16 +19,16 @@ const FeaturedProjects = ({ projects }: Props) => {
 
       <div className="grid md:grid-cols-3 gap-6">
         {filterTop3FeaturedProjects?.map((project: any) => (
-          <React.Fragment key={project.attributes.uid}>
+          <React.Fragment key={project._id}>
             <BlogPostCard
-              title={project.attributes.name}
-              slug={project.attributes.slug}
+              title={project.title}
+              slug={project.slug.current}
               gradient={
                 bgGradient[Math.floor(Math.random() * bgGradient.length)]
               }
-              content={project.attributes.description}
-              url={project.attributes.url}
-              date={project.attributes.date}
+              content={project.content}
+              url={project.url}
+              date={project.date}
             />
           </React.Fragment>
         ))}
