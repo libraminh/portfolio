@@ -63,6 +63,5 @@
     "singleQuote": false,
     "tabWidth": 2,
     "trailingComma": "none"
-  },
-  "packageManager": "pnpm@7.16.1"
+  }
 }
