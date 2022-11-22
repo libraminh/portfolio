@@ -8,7 +8,6 @@ specifiers:
   '@prisma/client': ^4.5.0
   '@sanity/image-url': ^1.0.1
   '@sanity/webhook': ^2.0.0
-  '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': 0.5.7
   '@types/react': ^18.0.24
   '@vercel/analytics': ^0.1.3
@@ -55,7 +54,6 @@ dependencies:
   '@prisma/client': 4.5.0_prisma@4.5.0
   '@sanity/image-url': 1.0.1
   '@sanity/webhook': 2.0.0
-  '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.1
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.2.1
   '@vercel/analytics': 0.1.3_react@18.2.0
   classnames: 2.3.2
@@ -922,7 +920,7 @@ packages:
       chalk: 4.1.2
       destr: 1.2.1
       execa: 5.1.1
-      follow-redirects: 1.15.2
+      follow-redirects: 1.15.2_debug@2.6.9
       fs-extra: 10.1.0
       globby: 11.1.0
       merge-stream: 2.0.0
@@ -1618,14 +1616,6 @@ packages:
     resolution: {integrity: sha512-rEUrBSGIoSFuYxwBYtlUFMlE2CwGhmW+w9355/5oduSw8e5h2+Tj4UrAGNNgP9915++wj5vkQo0UuOBqOAq4nw==}
     dependencies:
       tslib: 2.4.1
-    dev: false
-
-  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.1:
-    resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
-    peerDependencies:
-      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
-    dependencies:
-      tailwindcss: 3.2.1_postcss@8.4.18
     dev: false
 
   /@tailwindcss/typography/0.5.7_tailwindcss@3.2.1:
@@ -3933,16 +3923,6 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /follow-redirects/1.15.2:
-    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    dev: true
-
   /follow-redirects/1.15.2_debug@2.6.9:
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
     engines: {node: '>=4.0'}
@@ -3953,7 +3933,6 @@ packages:
         optional: true
     dependencies:
       debug: 2.6.9
-    dev: false
 
   /form-data/4.0.0:
     resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
