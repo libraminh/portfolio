@@ -1,4 +1,3 @@
-import { PortableText } from "@portabletext/react";
 import AuthorInformation from "components/AuthorInformation";
 import Container from "components/Container";
 import IconLinked from "components/IconLinked";
@@ -7,6 +6,9 @@ import { projectsQuery } from "lib/queries";
 import { getClient } from "lib/sanity-server";
 import Link from "next/link";
 import React from "react";
+
+import { toPlainText } from "@portabletext/react";
+import TextTruncate from "react-text-truncate";
 
 const Portfolio = ({ projects }) => {
   return (
@@ -30,8 +32,15 @@ const Portfolio = ({ projects }) => {
                   {project.title}
                 </div>
 
-                <div className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 relative z-20">
-                  <PortableText value={project.content} />
+                <div className="text-sm text-gray-600 dark:text-gray-400 relative z-20">
+                  {/* <PortableText value={project.content} /> */}
+
+                  <TextTruncate
+                    line={2}
+                    element="span"
+                    truncateText="…"
+                    text={toPlainText(project.content)}
+                  />
                 </div>
 
                 <p className="relative z-20 mt-4 flex items-center text-sm font-medium text-zinc-500 transition group-hover/portfolio:text-teal-500 dark:text-zinc-200">

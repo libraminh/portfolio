@@ -1,7 +1,8 @@
 import cn from "classnames";
 import Link from "next/link";
 
-import { PortableText } from "@portabletext/react";
+import { toPlainText } from "@portabletext/react";
+import TextTruncate from "react-text-truncate";
 
 interface Props {
   title: string;
@@ -41,8 +42,13 @@ export default function BlogPostCard({
             </span>
           </div>
 
-          <div className=" text-sm pt-3 line-clamp-2 text-gray-600 dark:text-gray-300">
-            <PortableText value={content} />
+          <div className="text-sm pt-3 text-gray-600 dark:text-gray-300">
+            <TextTruncate
+              line={2}
+              element="span"
+              truncateText="…"
+              text={toPlainText(content)}
+            />
           </div>
         </div>
       </div>
