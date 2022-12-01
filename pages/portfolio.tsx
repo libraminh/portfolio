@@ -32,16 +32,18 @@ const Portfolio = ({ projects }) => {
                   {project.title}
                 </div>
 
-                <div className="text-sm text-gray-600 dark:text-gray-400 relative z-20">
-                  {/* <PortableText value={project.content} /> */}
+                {project?.content ? (
+                  <div className="text-sm text-gray-600 dark:text-gray-400 relative z-20">
+                    {/* <PortableText value={project.content} /> */}
 
-                  <TextTruncate
-                    line={2}
-                    element="span"
-                    truncateText="…"
-                    text={toPlainText(project.content)}
-                  />
-                </div>
+                    <TextTruncate
+                      line={2}
+                      element="span"
+                      truncateText="…"
+                      text={toPlainText(project?.content)}
+                    />
+                  </div>
+                ) : null}
 
                 <p className="relative z-20 mt-4 flex items-center text-sm font-medium text-zinc-500 transition group-hover/portfolio:text-teal-500 dark:text-zinc-200">
                   <IconLinked />

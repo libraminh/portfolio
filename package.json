@@ -62,6 +62,6 @@
     "arrowParens": "always",
     "singleQuote": false,
     "tabWidth": 2,
-    "trailingComma": "none"
+    "trailingComma": "all"
   }
 }
