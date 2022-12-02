@@ -5,15 +5,23 @@ import { bgGradient } from "helpers/constants";
 import { projectsQuery } from "lib/queries";
 import { getClient } from "lib/sanity-server";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { toPlainText } from "@portabletext/react";
 import TextTruncate from "react-text-truncate";
 import { motion } from "framer-motion";
 
 const Portfolio = ({ projects }) => {
-  const [filterd, setFilterd] = useState("");
+  const [filterd, setFilterd] = useState("all");
   const [projectFiltered, setProjectFiltered] = useState([]);
+
+  const activeNav = useCallback(
+    (type: string) => {
+      if (type !== filterd) return;
+      return "bg-white text-black";
+    },
+    [filterd],
+  );
 
   useEffect(() => {
     if (filterd.trim().length === 0 || filterd === "all") {
@@ -37,21 +45,27 @@ const Portfolio = ({ projects }) => {
       <div className="max-2-xl md:max-w-5xl w-full mx-auto pb-16 text-white">
         <ul className="flex space-x-5 mb-5">
           <li
-            className="border-2 border-solid border-white px-5 py-1 rounded-full cursor-pointer"
+            className={`border-2 border-solid border-white px-5 py-1 rounded-full cursor-pointer ${activeNav(
+              "all",
+            )}`}
             onClick={() => setFilterd("all")}
           >
             All
           </li>
 
           <li
-            className="border-2 border-solid border-white px-5 py-1 rounded-full cursor-pointer"
+            className={`border-2 border-solid border-white px-5 py-1 rounded-full cursor-pointer ${activeNav(
+              "template",
+            )}`}
             onClick={() => setFilterd("template")}
           >
             Template
           </li>
 
           <li
-            className="border-2 border-solid border-white px-5 py-1 rounded-full cursor-pointer"
+            className={`border-2 border-solid border-white px-5 py-1 rounded-full cursor-pointer ${activeNav(
+              "webApp",
+            )}`}
             onClick={() => setFilterd("webApp")}
           >
             Web app
