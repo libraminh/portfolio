@@ -43,7 +43,7 @@ const Portfolio = ({ projects }) => {
       </div>
 
       <div className="max-2-xl md:max-w-5xl w-full mx-auto pb-16 dark:text-white text-gray-600">
-        <ul className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-5 mb-10 md:mb-5">
+        <ul className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-5 mb-10">
           <li
             className={`border-2 border-solid border-gray-600 dark:border-white text-center inline-flex items-center justify-center px-5 py-3 md:py-1 rounded-full cursor-pointer ${activeNav(
               "all",
