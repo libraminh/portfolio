@@ -9,7 +9,7 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import { toPlainText } from "@portabletext/react";
 import TextTruncate from "react-text-truncate";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Portfolio = ({ projects }) => {
   const [filterd, setFilterd] = useState("all");
@@ -72,48 +72,52 @@ const Portfolio = ({ projects }) => {
           </li>
         </ul>
 
-        <motion.div className="grid md:grid-cols-3 md:-mx-5 gap-8" layout>
-          {projectFiltered?.map((project) => (
-            <motion.div
-              layout
-              animate={{ opacity: 1 }}
-              initial={{ opacity: 0 }}
-              exit={{ opacity: 0 }}
-              key={project._id}
-            >
-              <Link
-                className={`${
-                  bgGradient[Math.floor(Math.random() * bgGradient.length)]
-                } bg-gradient-to-r md:dark:bg-zinc-900 md:bg-transparent block border md:border-0 rounded-2xl md:border-white group/portfolio text-gray-900 dark:text-gray-200 relative p-0.5 md:p-0`}
-                href={`/portfolio/${project.slug.current}`}
+        <div className="grid md:grid-cols-3 md:-mx-5 gap-8">
+          <AnimatePresence>
+            {projectFiltered?.map((project) => (
+              <motion.div
+                layout
+                animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                style={{ overflow: "hidden" }}
+                key={project._id}
               >
-                <figure className="dark:bg-zinc-900 bg-white p-5 h-full rounded-2xl md:rounded-none">
-                  <div className="flex mb-2 space-x-2 text-lg relative z-20">
-                    {project.title}
-                  </div>
-
-                  {project?.content ? (
-                    <div className="text-sm text-gray-600 dark:text-gray-400 relative z-20">
-                      <TextTruncate
-                        line={2}
-                        element="span"
-                        truncateText="…"
-                        text={toPlainText(project?.content)}
-                      />
+                <Link
+                  className={`${
+                    bgGradient[Math.floor(Math.random() * bgGradient.length)]
+                  } bg-gradient-to-r md:dark:bg-zinc-900 md:bg-transparent block border md:border-0 rounded-2xl md:border-white group/portfolio text-gray-900 dark:text-gray-200 relative p-0.5 md:p-0`}
+                  href={`/portfolio/${project.slug.current}`}
+                >
+                  <motion.figure className="dark:bg-zinc-900 bg-white p-5 h-full rounded-2xl md:rounded-none">
+                    <div className="flex mb-2 space-x-2 text-lg relative z-20">
+                      {project.title}
                     </div>
-                  ) : null}
 
-                  <p className="relative z-20 mt-4 flex items-center text-sm font-medium text-zinc-500 transition group-hover/portfolio:text-teal-500 dark:text-zinc-200">
-                    <IconLinked />
-                    <span className="ml-2">read more</span>
-                  </p>
-                </figure>
+                    {project?.content ? (
+                      <div className="text-sm text-gray-600 dark:text-gray-400 relative z-20">
+                        <TextTruncate
+                          line={2}
+                          element="span"
+                          truncateText="…"
+                          text={toPlainText(project?.content)}
+                        />
+                      </div>
+                    ) : null}
 
-                <div className="absolute inset-0 scale-0 group-hover/portfolio:scale-100 opacity-0 group-hover/portfolio:opacity-100 bg-zinc-100 dark:bg-zinc-800/50 z-10 rounded-2xl transition-all"></div>
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
+                    <p className="relative z-20 mt-4 flex items-center text-sm font-medium text-zinc-500 transition group-hover/portfolio:text-teal-500 dark:text-zinc-200">
+                      <IconLinked />
+                      <span className="ml-2">read more</span>
+                    </p>
+                  </motion.figure>
+
+                  <div className="absolute inset-0 scale-0 group-hover/portfolio:scale-100 opacity-0 group-hover/portfolio:opacity-100 bg-zinc-100 dark:bg-zinc-800/50 z-10 rounded-2xl transition-all"></div>
+                </Link>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
       </div>
     </Container>
   );
