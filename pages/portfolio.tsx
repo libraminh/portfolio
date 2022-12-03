@@ -6,10 +6,13 @@ import { projectsQuery } from "lib/queries";
 import { getClient } from "lib/sanity-server";
 import Link from "next/link";
 import React, { useCallback, useEffect, useState } from "react";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 import { toPlainText } from "@portabletext/react";
 import TextTruncate from "react-text-truncate";
 import { AnimatePresence, motion } from "framer-motion";
+
+import { DrawingPinFilledIcon } from "@radix-ui/react-icons";
 
 const Portfolio = ({ projects }) => {
   const [filterd, setFilterd] = useState("all");
@@ -24,15 +27,20 @@ const Portfolio = ({ projects }) => {
   );
 
   useEffect(() => {
+    const sortFeaturedProjects = projects?.reduce(
+      (acc, current) =>
+        current.featured ? [current, ...acc] : [...acc, current],
+      [],
+    );
+
     if (filterd.trim().length === 0 || filterd === "all") {
-      setProjectFiltered(projects);
+      setProjectFiltered(sortFeaturedProjects);
       return;
     }
 
-    const filterdProjects = projects?.filter(
-      (project) => project.genre === filterd,
+    const filterdProjects = sortFeaturedProjects?.filter((project) =>
+      project.genre.includes(filterd),
     );
-
     setProjectFiltered(filterdProjects);
   }, [filterd, projects]);
 
@@ -44,32 +52,80 @@ const Portfolio = ({ projects }) => {
 
       <div className="max-2-xl md:max-w-5xl w-full mx-auto pb-16 dark:text-white text-gray-600">
         <ul className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-5 mb-10">
-          <li
-            className={`border-2 border-solid border-gray-600 dark:border-white text-center inline-flex items-center justify-center px-5 py-3 md:py-1 rounded-full cursor-pointer ${activeNav(
-              "all",
-            )}`}
-            onClick={() => setFilterd("all")}
-          >
-            All
-          </li>
+          <Tooltip.Provider delayDuration={200}>
+            <Tooltip.Root>
+              <Tooltip.Trigger asChild>
+                <li
+                  className={`border-2 border-solid border-gray-600 dark:border-white text-center inline-flex items-center justify-center px-5 py-3 md:py-1 rounded-full cursor-pointer ${activeNav(
+                    "all",
+                  )}`}
+                  onClick={() => setFilterd("all")}
+                >
+                  All
+                </li>
+              </Tooltip.Trigger>
 
-          <li
-            className={`border-2 border-solid border-gray-600 dark:border-white text-center inline-flex items-center justify-center px-5 py-3 md:py-1 rounded-full cursor-pointer ${activeNav(
-              "template",
-            )}`}
-            onClick={() => setFilterd("template")}
-          >
-            Template
-          </li>
+              <Tooltip.Portal>
+                <Tooltip.Content
+                  className="dark:bg-white/20 dark:text-white px-5 py-2 rounded-full text-xs"
+                  sideOffset={5}
+                >
+                  Show all type of projects.
+                  <Tooltip.Arrow className="TooltipArrow" />
+                </Tooltip.Content>
+              </Tooltip.Portal>
+            </Tooltip.Root>
+          </Tooltip.Provider>
 
-          <li
-            className={`border-2 border-solid border-gray-600 dark:border-white text-center inline-flex items-center justify-center px-5 py-3 md:py-1 rounded-full cursor-pointer ${activeNav(
-              "webApp",
-            )}`}
-            onClick={() => setFilterd("webApp")}
-          >
-            Web app
-          </li>
+          <Tooltip.Provider delayDuration={200}>
+            <Tooltip.Root>
+              <Tooltip.Trigger asChild>
+                <li
+                  className={`border-2 border-solid border-gray-600 dark:border-white text-center inline-flex items-center justify-center px-5 py-3 md:py-1 rounded-full cursor-pointer ${activeNav(
+                    "template",
+                  )}`}
+                  onClick={() => setFilterd("template")}
+                >
+                  Template
+                </li>
+              </Tooltip.Trigger>
+
+              <Tooltip.Portal>
+                <Tooltip.Content
+                  className="dark:bg-white/20 dark:text-white px-5 py-2 rounded-full text-xs"
+                  sideOffset={5}
+                >
+                  Show all template projects. (HTML/CSS)
+                  <Tooltip.Arrow className="TooltipArrow" />
+                </Tooltip.Content>
+              </Tooltip.Portal>
+            </Tooltip.Root>
+          </Tooltip.Provider>
+
+          <Tooltip.Provider delayDuration={200}>
+            <Tooltip.Root>
+              <Tooltip.Trigger asChild>
+                <li
+                  className={`border-2 border-solid border-gray-600 dark:border-white text-center inline-flex items-center justify-center px-5 py-3 md:py-1 rounded-full cursor-pointer ${activeNav(
+                    "webApp",
+                  )}`}
+                  onClick={() => setFilterd("webApp")}
+                >
+                  Web app
+                </li>
+              </Tooltip.Trigger>
+
+              <Tooltip.Portal>
+                <Tooltip.Content
+                  className="dark:bg-white/20 dark:text-white px-5 py-2 rounded-full text-xs"
+                  sideOffset={5}
+                >
+                  Show all non-template projects.
+                  <Tooltip.Arrow className="TooltipArrow" />
+                </Tooltip.Content>
+              </Tooltip.Portal>
+            </Tooltip.Root>
+          </Tooltip.Provider>
         </ul>
 
         <div className="grid md:grid-cols-3 md:-mx-5 gap-8">
@@ -111,6 +167,12 @@ const Portfolio = ({ projects }) => {
                       <span className="ml-2">read more</span>
                     </p>
                   </motion.figure>
+
+                  {project.featured ? (
+                    <div className="rounded-full flex items-center justify-center md:border md:border-teal-500 absolute top-2 right-2 p-1.5 z-50">
+                      <DrawingPinFilledIcon className="text-teal-500" />
+                    </div>
+                  ) : null}
 
                   <div className="absolute inset-0 scale-0 group-hover/portfolio:scale-100 opacity-0 group-hover/portfolio:opacity-100 bg-zinc-100 dark:bg-zinc-800/50 z-10 rounded-2xl transition-all"></div>
                 </Link>
