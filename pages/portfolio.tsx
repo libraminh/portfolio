@@ -67,11 +67,10 @@ const Portfolio = ({ projects }) => {
 
               <Tooltip.Portal>
                 <Tooltip.Content
-                  className="dark:bg-white/20 dark:text-white px-5 py-2 rounded-full text-xs"
-                  sideOffset={5}
+                  className="bg-zinc-100 text-gray-600 dark:bg-white/20 dark:text-white px-5 py-2 rounded-full text-xs"
+                  sideOffset={10}
                 >
                   Show all type of projects.
-                  <Tooltip.Arrow className="TooltipArrow" />
                 </Tooltip.Content>
               </Tooltip.Portal>
             </Tooltip.Root>
@@ -92,11 +91,10 @@ const Portfolio = ({ projects }) => {
 
               <Tooltip.Portal>
                 <Tooltip.Content
-                  className="dark:bg-white/20 dark:text-white px-5 py-2 rounded-full text-xs"
-                  sideOffset={5}
+                  className="bg-zinc-100 text-gray-600 dark:bg-white/20 dark:text-white px-5 py-2 rounded-full text-xs"
+                  sideOffset={10}
                 >
                   Show all template projects. (HTML/CSS)
-                  <Tooltip.Arrow className="TooltipArrow" />
                 </Tooltip.Content>
               </Tooltip.Portal>
             </Tooltip.Root>
@@ -117,11 +115,10 @@ const Portfolio = ({ projects }) => {
 
               <Tooltip.Portal>
                 <Tooltip.Content
-                  className="dark:bg-white/20 dark:text-white px-5 py-2 rounded-full text-xs"
-                  sideOffset={5}
+                  className="bg-zinc-100 text-gray-600 dark:bg-white/20 dark:text-white px-5 py-2 rounded-full text-xs"
+                  sideOffset={10}
                 >
                   Show all non-template projects.
-                  <Tooltip.Arrow className="TooltipArrow" />
                 </Tooltip.Content>
               </Tooltip.Portal>
             </Tooltip.Root>
