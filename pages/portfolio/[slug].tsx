@@ -76,18 +76,22 @@ const PortfolioPage = ({ project }) => {
           </div>
         </div>
 
-        <div className="flex items-center space-x-5">
-          <div className="border border-gray-400 dark:border-0 dark:bg-white flex items-center justify-center w-10 h-10 rounded-full">
-            <Image
-              alt="Minh Le"
-              height={22}
-              width={22}
-              src="/calender-icon.svg"
-              priority
-            />
+        {project.date ? (
+          <div className="flex items-center space-x-5">
+            <div className="border border-gray-400 dark:border-0 dark:bg-white flex items-center justify-center w-10 h-10 rounded-full">
+              <Image
+                alt="Minh Le"
+                height={22}
+                width={22}
+                src="/calender-icon.svg"
+                priority
+              />
+            </div>
+            <span className="dark:text-white text-gray-600">
+              {project.date}
+            </span>
           </div>
-          <span className="dark:text-white text-gray-600">{project.date}</span>
-        </div>
+        ) : null}
 
         <article className="space-y-1">
           <h2 className="text-lg font-semibold mb-5 dark:text-white text-gray-600">
