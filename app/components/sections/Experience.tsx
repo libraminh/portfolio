@@ -125,7 +125,7 @@ export function Experience() {
                         {isExpanded && exp.groupedResponsibilities && exp.groupedResponsibilities.length > 0 && (
                           <div className="space-y-4 mb-4">
                             {exp.groupedResponsibilities.map((group, groupIdx) => (
-                              <div key={groupIdx} className="border-l-2 border-primary/30 pl-4">
+                              <div key={groupIdx}>
                                 <h4 className="font-semibold text-base mb-2 text-foreground">
                                   {group.title}
                                 </h4>
