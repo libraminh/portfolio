@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
+
+A modern, minimalist personal portfolio website built with Next.js 14+, TypeScript, Shadcn/UI, and Tailwind CSS.
+
+## Features
+
+- 🎨 Modern, minimalist design
+- 📱 Fully responsive (mobile-first)
+- ⚡ Optimized for performance
+- 🎭 Smooth animations with Framer Motion
+- 🌙 Dark mode support (via Shadcn/UI)
+- 🔍 SEO optimized with structured data
+- ♿ Accessible components (Shadcn/UI)
+- 🚀 Ready for Vercel deployment
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn/UI
+- **Animations**: Framer Motion
+- **Icons**: Lucide React, React Icons
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone <your-repo-url>
+   cd portfolio
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+
+3. Run the development server
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Project Structure
+
+```
+portfolio/
+├── app/
+│   ├── components/
+│   │   ├── layout/          # Header, Footer, Navigation
+│   │   ├── sections/        # Hero, About, Experience, etc.
+│   │   └── ui/              # Shadcn/UI components
+│   ├── layout.tsx           # Root layout with metadata
+│   ├── page.tsx             # Main page
+│   └── globals.css          # Global styles
+├── lib/
+│   └── data.ts              # Portfolio data
+└── public/                  # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Customization
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Update Portfolio Data
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edit `lib/data.ts` to update:
+- Personal information
+- Work experience
+- Projects
+- Skills
+- Education
+- Certifications
 
-## Learn More
+### Styling
 
-To learn more about Next.js, take a look at the following resources:
+- Global styles: `app/globals.css`
+- Component styles: Tailwind CSS classes
+- Theme: Configured via Shadcn/UI in `components.json`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Adding New Sections
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Create a new component in `app/components/sections/`
+2. Import and add it to `app/page.tsx`
+3. Add navigation link in `app/components/layout/Navigation.tsx`
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Quick Deploy to Vercel
+
+1. Push your code to GitHub
+2. Import project on [vercel.com](https://vercel.com)
+3. Deploy!
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+## License
+
+MIT
+
+## Contact
+
+Minh Le - libraminh@gmail.com
+
+Portfolio: [https://minhle.vercel.app/](https://minhle.vercel.app/)
