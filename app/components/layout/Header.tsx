@@ -20,7 +20,7 @@ export function Header() {
               href="#hero"
               className="text-xl font-bold text-foreground hover:text-foreground/80 transition-colors"
             >
-              {personalInfo.name.split(" ")[0]}
+              Portfolio
             </a>
           </div>
           <Navigation />
@@ -48,7 +48,7 @@ export function Header() {
               className="hidden sm:flex"
             >
               <Mail className="h-4 w-4 mr-2" />
-              Contact
+              Get In Touch
             </Button>
           </div>
         </div>

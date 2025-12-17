@@ -5,11 +5,16 @@ import { Button } from "@/components/ui/button";
 import { Spotlight } from "@/components/ui/spotlight-new";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { personalInfo, professionalSummary } from "@/lib/data";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 
 export function Hero() {
-  const handleContactClick = () => {
-    window.location.href = `mailto:${personalInfo.email}`;
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/docs/MinhLe_Frontend_Resume.pdf";
+    link.download = "MinhLe_Frontend_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleScrollToExperience = () => {
@@ -78,9 +83,9 @@ export function Hero() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <Button size="lg" onClick={handleContactClick}>
-                <Mail className="h-4 w-4 mr-2" />
-                Get In Touch
+              <Button size="lg" onClick={handleDownloadCV}>
+                <Download className="h-4 w-4 mr-2" />
+                Download CV
               </Button>
               <Button size="lg" variant="outline" onClick={handleScrollToExperience}>
                 View My Work
