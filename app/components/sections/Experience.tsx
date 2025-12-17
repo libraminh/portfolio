@@ -69,10 +69,10 @@ export function Experience() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className="relative pl-12 md:pl-20"
+                    className="relative pl-0 md:pl-20"
                   >
                     {/* Timeline dot */}
-                    <div className="absolute left-2 md:left-6 top-2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg z-10"></div>
+                    <div className="absolute left-2 md:left-6 top-2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg z-10 hidden md:block"></div>
 
                     {/* Content card */}
                     <div className="bg-card rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/20 overflow-hidden">
