@@ -166,7 +166,17 @@ export const projects: Project[] = [
     description:
       "Finance-focused dashboard application with role-based access and scheduling features.",
     details: [
-      "Built calendar drag-and-drop interactions and multi-step onboarding flows.",
+      "Defined component structure, folder conventions, and naming standards to ensure consistency and long-term maintainability.",
+      "Built a reusable form system by wrapping React Hook Form with Shadcn/UI, reducing duplicated logic across the application.",
+      "Implemented role-based dashboards with data visualization using Recharts.",
+      "Built calendar-based scheduling with drag-and-drop interactions to manage staff tasks and events.",
+      "Developed multi-step registration and onboarding flows with robust validation.",
+      "Integrated Stripe payment processing into a multi-step Next.js flow, handling secure checkout, validation, and payment state management within the frontend.",
+      "Applied state management using Zustand and React Query for predictable data flow and server state handling.",
+      "Implemented role-based access control (RBAC) using CASL to support multiple permission levels.",
+      "Migrated the application from Next.js 14 to Next.js 16, transitioning the build system from Webpack to Turbopack.",
+      "Improved performance and design flexibility by migrating from MUI to Shadcn/UI with Tailwind CSS.",
+      "Set up code quality and testing pipelines, integrating SonarQube scanning with Jest unit tests.",
     ],
     stack: [
       "Next.js",
@@ -175,6 +185,12 @@ export const projects: Project[] = [
       "React Query",
       "Shadcn/UI",
       "Tailwind CSS",
+      "React Hook Form",
+      "Recharts",
+      "CASL",
+      "Stripe",
+      "Jest",
+      "SonarQube",
     ],
     links: {
       live: "https://portal.flexigrow.app/register",
@@ -209,14 +225,19 @@ export const projects: Project[] = [
   {
     name: "NUS Programme Builder",
     description:
-      "Web application for guiding users through MBA program journeys.",
+      "Interactive curriculum exploration web application for the National University of Singapore's MBA programme, enabling prospective candidates to visualise, customise, and save personalised MBA journey plans based on their professional interests and career goals.",
     details: [
-      "Implemented complex form flows, data fetching, and UI state management.",
+      "Developed and maintained an interactive curriculum exploration web application integrating over 50 electives, multiple specialisations, experiential learning opportunities, student clubs, and international exchange options from the NUS MBA catalogue.",
+      "Built an interactive MBA curriculum planner enabling dynamic exploration and customisation of programme routes and electives.",
+      "Integrated academic course data, experiential opportunities, and recommendations based on user career intent.",
+      "Provided dynamic recommendations tailored to user input for personalised journey generation.",
+      "Improved admissions engagement through personalised journey generation and save/export functionality.",
+      "Implemented complex form flows, data fetching, and UI state management for seamless user experience.",
     ],
     stack: [
       "React",
       "TypeScript",
-      "Redux Toolkit",
+      "Zustand",
       "React Query",
       "Ant Design",
       "Tailwind CSS",
