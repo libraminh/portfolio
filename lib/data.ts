@@ -177,7 +177,7 @@ export const projects: Project[] = [
       "Tailwind CSS",
     ],
     links: {
-      live: "https://portal.flexigrow.app/",
+      live: "https://portal.flexigrow.app/register",
     },
   },
   {
