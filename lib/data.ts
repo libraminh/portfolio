@@ -66,9 +66,10 @@ export const workExperience: WorkExperience[] = [
   {
     company: "Aswhite Global",
     role: "Frontend Developer",
-    period: "Oct 2023 – Present",
+    period: "Oct 2023 – Dec 2025",
+    location: "Hybrid",
     responsibilities: [
-      "Primary frontend developer for the Flexigrow Finance application, owning frontend architecture and hands-on implementation using React and Next.js.",
+      "Frontend developer for the Flexigrow Business Management Softwarelication, owning frontend architecture and hands-on implementation using React and Next.js.",
       "Defined component architecture, folder structure, and naming conventions to improve consistency and long-term maintainability.",
       "Built a reusable form system by wrapping React Hook Form with Shadcn/UI components, significantly reducing duplicated logic.",
       "Migrated UI stack from MUI to Shadcn/UI with Tailwind CSS, improving performance and design flexibility.",
@@ -130,25 +131,6 @@ export const workExperience: WorkExperience[] = [
     ],
   },
   {
-    company: "Gigarion Technology",
-    role: "Frontend Developer",
-    period: "May 2022 – Jul 2023",
-    responsibilities: [
-      "Contributed to the Flexigrow Finance web application, focusing on interactive UI development and data visualization.",
-      "Built responsive dashboards using Next.js, Tailwind CSS, Shadcn/UI, and charting libraries such as ApexCharts and Chart.js.",
-      "Integrated Stripe payment flows and worked closely with backend APIs.",
-    ],
-    techStack: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "Shadcn/UI",
-      "ApexCharts",
-      "Chart.js",
-      "Stripe",
-    ],
-  },
-  {
     company: "Eplus Company",
     role: "Website Developer",
     period: "May 2017 – Jan 2018",
@@ -162,9 +144,9 @@ export const workExperience: WorkExperience[] = [
 
 export const projects: Project[] = [
   {
-    name: "Flexigrow Finance App",
+    name: "Flexigrow Business Management Software",
     description:
-      "Finance-focused dashboard application with role-based access and scheduling features.",
+      "All-in-one admin + built-in insurance for NDIS providers and trades. Quote jobs, invoice, get paid, stay covered.",
     details: [
       "Defined component structure, folder conventions, and naming standards to ensure consistency and long-term maintainability.",
       "Built a reusable form system by wrapping React Hook Form with Shadcn/UI, reducing duplicated logic across the application.",
@@ -199,7 +181,7 @@ export const projects: Project[] = [
   {
     name: "Flexigrow Marketing Site",
     description:
-      "WordPress marketing website for Flexigrow Finance App, showcasing features, pricing, and customer testimonials.",
+      "WordPress marketing website for Flexigrow Business Management Software, showcasing features, pricing, and customer testimonials.",
     details: [
       "Developed custom WordPress theme with ACF and Elementor for flexible content management.",
       "Optimized for SEO and performance, achieving high Lighthouse scores across all metrics.",
@@ -246,7 +228,7 @@ export const projects: Project[] = [
       live: "https://mbabuilder.nus.edu.sg/",
     },
   },
-  
+
 ];
 
 export const skills: SkillCategory[] = [
