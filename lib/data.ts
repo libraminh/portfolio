@@ -69,7 +69,7 @@ export const workExperience: WorkExperience[] = [
     period: "Oct 2023 – Dec 2025",
     location: "Hybrid",
     responsibilities: [
-      "Frontend developer for the Flexigrow Business Management Softwarelication, owning frontend architecture and hands-on implementation using React and Next.js.",
+      "Frontend developer for the Flexigrow Business Management Software, owning frontend architecture and hands-on implementation using React and Next.js.",
       "Defined component architecture, folder structure, and naming conventions to improve consistency and long-term maintainability.",
       "Built a reusable form system by wrapping React Hook Form with Shadcn/UI components, significantly reducing duplicated logic.",
       "Migrated UI stack from MUI to Shadcn/UI with Tailwind CSS, improving performance and design flexibility.",
